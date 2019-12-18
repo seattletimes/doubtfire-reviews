@@ -20,15 +20,24 @@ $( ".toggle_radio label" ).click(function() {
     $('.beforeSummary').fadeIn();
     $('.afterSummary').hide();
     $(".toggle_radio").toggleClass("toggleOn");
+    $(".divider").toggleClass("toggleOn");
     $(this).find('div').addClass("opacityOn");
     $('#afterLabel').find('div').removeClass('opacityOn');
+    $('.beforeIntro').show();
+    $('.afterIntro').hide();
+
+    $(".stats").css("border-left","10px solid #4bb3d6");
   } else {
     $('.afterSummary').fadeIn();
     $('.beforeSummary').hide();
 
     $(".toggle_radio").toggleClass("toggleOn");
+    $(".divider").toggleClass("toggleOn");
 
     $(this).find('div').addClass("opacityOn");
     $('#beforeLabel').find('div').removeClass('opacityOn');
+    $('.beforeIntro').hide();
+    $('.afterIntro').show();
+    $(".stats").css("border-left","10px solid #0e5773");
   }
 });
