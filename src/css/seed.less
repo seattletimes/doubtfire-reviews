@@ -1,0 +1,156 @@
+@import "seattletimes";
+
+.reviews {
+  max-width: 960px;
+  margin: auto;
+}
+
+
+.wrapper {
+  margin: 100px 0;
+}
+.toggle_radio{
+  position: relative;
+  background: rgba(255,255,255,.1);
+  margin: 4px auto;
+  overflow: hidden;
+  padding: 0 !important;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  height: 86px;
+  width: 612px;
+  background-color: #ddd;
+
+  // background-color: #08AEEA;
+  // background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+
+ // moonlight asteroid 
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  z-index: 1;
+
+
+  label div {
+    z-index: 3;
+    opacity: 0.5;
+
+    &.opacityOn { opacity: 1; }
+  }
+
+
+
+  label:nth-of-type(1) div {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+  }
+
+  label:nth-of-type(2) div {
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%,-50%);
+  }
+
+
+}
+
+.toggle_radio::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  // blue raspberry
+  background: #00b4db; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00b4db, #0083b0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00b4db, #0083b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+.toggle_radio.toggleOn::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  // blue raspberry
+  background: #00b4db; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00b4db, #0083b0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00b4db, #0083b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 1;
+}
+
+
+
+
+
+.toggle_radio > * {
+  float: left;
+}
+.toggle_radio input[type=radio]{
+  display: none;
+}
+.toggle_radio label{
+  // color: black;
+  font-family: sans-serif;
+  font-weight: 900;
+  display: block;
+  width: 300px;
+  height: 80px;
+  margin: 3px 3px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1;
+  text-align: center;
+}
+
+
+
+.toggle_option_slider{
+  width: 300px;
+  height: 80px;
+  position: absolute;
+  top: 3px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+#before_toggle:checked ~ .toggle_option_slider{
+  background: rgba(255,255,255,.3);
+  left: 3px;
+}
+#after_toggle:checked ~ .toggle_option_slider{
+  background: rgba(255,255,255,.3);
+  left: 309px;
+}
+
+.headshot {
+  max-width: 300px;
+  margin-right: 20px;
+  float: left;
+
+  img { width: 100%; }
+}

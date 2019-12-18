@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_dataLayer.html") %>
+      <%= t.include("partials/_gtm.html") %>
+    <% } %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtmNoScript.html") %>
+    <% } %>
+    <responsive-child>
+      <!-- content goes here -->
+
+      <div class="reviews">
+
+        <div class="wrapper">
+          <div class="toggle_radio">
+            <input type="radio" checked class="toggle_option" id="before_toggle" name="toggle_option">
+            <input type="radio" class="toggle_option" id="after_toggle" name="toggle_option">
+            <label class="label" id="beforeLabel" for="before_toggle"><div class="opacityOn">Before the show</div></label>
+            <label class="label" id="afterLabel" for="after_toggle"><div>After the show</div></label>
+          <div class="toggle_option_slider"></div>
+        </div>
+      </div>
+
+        <%= t.include("partials/_beforeReview.html") %>
+
+        <div class="review reviewOne">
+          <div class="headshot">
+            <img src="assets/review1.jpg"/>
+          </div>
+          <h2 class="name">Jasmine Joshua</h2>
+          <div class="job">Composer, lyricist, playwright, artistic director of Reboot Theatre Company</div>
+          <div class="gender">non-binary (they/them)</div>
+          <div class="divider"></div>
+          <div class="beforeSummary">
+            <p>I was 9 years old when this movie came out. I loved Robin Williams. And I thought it was great.
+              Any impropriety completely went over my head. I wasn’t even self-aware enough to have a moment of
+              ‘Oh! They’re talking about me.’ To me, it’s a period piece.
+              There are a lot of ‘man in dress’ jokes that I know now as an adult and as a trans person perpetuate
+              a culture of gender binary and gender roles that I don’t ascribe to anymore.
+              I love musical theater and there’s a lot of musical theater that’s the same way — like “Carousel”:
+              “When he hit me, it felt like a kiss.” I mean that is horrifying.</p>
+
+            <p>I’m part of the 5th Avenue Theatre’s First Draft program (a commissioning program designed to nurture
+              new musical theater writers from traditionally marginalized populations that is currently focusing) on women,
+              trans, and gender non-conforming playwrights. And maybe the money from these blockbusters is being fed into making
+              new work [like Joshua’s “Here and Their”]. It’s an uncomfortable situation, but that’s kind of how I have to look at it.
+              I am directly benefiting from the 5th Avenue. A person who literally walked off a Broadway stage 36
+              hours ago is learning my music. So, I have a complicated relationship to them doing this show.</p>
+          </div>
+          <div class="afterSummary">
+            <p>In a lot of ways, this musical was a lot smarter than I thought it would be. The guy playing Mrs. Doubtfire
+              (Rob McClure)? Supremely talented human being. Did excellent voice work, his clowning was gorgeous.
+              I was actually impressed.</p>
+
+            <p>To me, the first uh-oh moment was the “make me a woman” song (in which Daniel asks the stylists to transform
+              him into Doubtfire). That was unconscionable. They bring out all these beautiful white women like Grace Kelly and
+              Jackie O., all these perfect Barbie dolls held up as the pinnacle of what womanhood is. Then Daniel is like:
+              “Oh no, no — I don’t need to look like that. I’m an older woman and I’m stockier.” What is the next thing that happens?
+              They had the men in the cast come out as women who are seen as ugly and unattractive. So now it’s Eleanor Roosevelt,
+              Janet Reno, Julia Child, randomly Margaret Thatcher. And why are they ugly? Because they’re men in dresses. And that’s
+              ugly. I’m like: “You didn’t see that. Why didn’t you see that?”</p>
+
+            <p>Then what happens when we transform Daniel into Mrs. Doubtfire? “It’s aliiiive!”</p>
+
+            <p>“It’s?!” Come on!</p>
+
+            <p>The entire monster number was sung fabulously (by Charity Angél Dawson). I had to clap because as a performer I’m
+              like “goddammit.” But literally it was: “You created a monster, a monster, a monster.”
+              We watched more people in drag come out as monsters, Daniel is literally fighting and hurting these men
+              in dresses because they’re monsters. After awhile, I’m like: “Okay. I get it. I’m a monster. I’m a monster.
+              I’m a monster.” That’s what I hear.</p>
+          </div>
+        </div>
+        <%= t.include("partials/_afterReview.html") %>
+      </div>
+    </responsive-child>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
