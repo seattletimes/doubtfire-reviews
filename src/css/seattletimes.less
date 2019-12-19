@@ -31,9 +31,14 @@ main {
   &.interactive {
     padding: 20px 10px;
     margin: 20px auto;
-    border-top: 1px solid @df-light-gray;
-    border-bottom: 1px solid @df-light-gray;
+    // border-top: 1px solid @df-light-gray;
+    // border-bottom: 1px solid @df-light-gray;
     // font-family: @df-sans;
+
+    @media @mobile {
+      padding: 0px 10px;
+      margin: 0 auto;
+    }
   }
 }
 
