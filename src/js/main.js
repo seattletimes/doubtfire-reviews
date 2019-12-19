@@ -16,12 +16,13 @@ require("component-responsive-frame/child");
 
 $( ".toggle_radio label" ).click(function() {
 
-  if ( $(this).attr('id') === "beforeLabel" ) {
+  if ( ($(this).attr('id') === "beforeLabel") || ($(this).attr('id') === "beforeLabel2") ) {
     $('.before').fadeIn();
     $('.after').hide();
 
-    $(this).find('div').addClass("opacityOn");
-    $('#afterLabel').find('div').removeClass('opacityOn');
+    $('.beforeLabel').find('div').addClass("opacityOn");
+    $('.afterLabel').find('div').removeClass('opacityOn');
+    // $('#afterLabel2').find('div').removeClass('opacityOn');
 
 
     $(".toggle_radio").removeClass("toggleOn");
@@ -29,20 +30,33 @@ $( ".toggle_radio label" ).click(function() {
 
 
     ($( window ).width() > 480) ? $(".stats").css("border-left","10px solid #4bb3d6") : '' ;
-
+    ($(this).attr('id') === "beforeLabel") ? $("#before_toggle2").prop("checked", true) : $("#before_toggle").prop("checked", true) ;
 
   } else {
+    console.log($(this));
     $('.before').hide();
     $('.after').fadeIn();
 
     $(".toggle_radio").addClass("toggleOn");
     $(".divider").addClass("toggleOn");
 
-    $(this).find('div').addClass("opacityOn");
-    $('#beforeLabel').find('div').removeClass('opacityOn');
+    $('.afterLabel').find('div').addClass("opacityOn");
+    $('.beforeLabel').find('div').removeClass('opacityOn');
+    // $('#beforeLabel2').find('div').removeClass('opacityOn');
 
     ($( window ).width() > 480) ? $(".stats").css("border-left","10px solid #0e5773") : '' ;
+    ($(this).attr('id') === "afterLabel") ? $("#after_toggle2").prop("checked", true) : $("#after_toggle").prop("checked", true) ;
 
 
   }
+});
+
+
+
+
+  $('#toggle_radio2').click(function (e) { //#A_ID is an example. Use the id of your Anchor
+    // console.log('I work');
+    $('html, body').animate({
+        scrollTop: $('#top').offset().top - 20 //#DIV_ID is an example. Use the id of your destination on the page
+    }, 'slow');
 });
