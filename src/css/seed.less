@@ -128,10 +128,10 @@
   display: block;
   width: 50%;
   height: 65px;
-  margin: 3px 0px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
+  margin: 0px 0px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
   cursor: pointer;
   z-index: 1;
   text-align: center;
@@ -142,12 +142,22 @@
   a { color: white; }
 }
 
+// .toggle_radio label:hover {
+//   opacity: 0.8;
+// }
+
+// .toggle_radio label:hover {
+//   background-color: rgba(255,255,255,0.2);
+// }
+
+
+
 .toggle_option_slider{
   // background: rgba(255,255,255,.2);
   width: 50%;
-  height: 59px;
+  height: 65px;
   position: absolute;
-  top: 3px;
+  top: 0;
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
   border-radius: 11px;
@@ -166,9 +176,9 @@
 .toggle_option_slider2{
   // background: rgba(255,255,255,.2);
   width: 50%;
-  height: 59px;
+  height: 65px;
   position: absolute;
-  top: 3px;
+  top: 0;
   -webkit-border-radius: 11px;
   -moz-border-radius: 11px;
   border-radius: 11px;
@@ -183,24 +193,31 @@
   }
 }
 
+
+
 #before_toggle:checked ~ .toggle_option_slider{
   background: rgba(255,255,255,.2);
-  left: 0.5%;
+  left: 0%;
 }
 #after_toggle:checked ~ .toggle_option_slider{
   background: rgba(255,255,255,.2);
-  left: 49.6%;
+  left: 50%;
 }
 
 #before_toggle2:checked ~ .toggle_option_slider2{
   background: rgba(255,255,255,.2);
-  left: 0.5%;
+  left: 0%;
 }
 #after_toggle2:checked ~ .toggle_option_slider2{
   background: rgba(255,255,255,.2);
-  left: 49.6%;
+  left: 50%;
 }
 
+// .toggle_option_slider:hover { background: rgba(255,255,255,.3); }
+// .toggle_option_slider2:hover { background: rgba(255,255,255,.3); }
+
+.toggle_radio label div:hover { color: rgba(	218,246,255, 0.8); }
+.toggle_radio2 label div:hover { color: rgba(	218,246,255,0.8); }
 
 
 .dropcap {
