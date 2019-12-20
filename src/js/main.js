@@ -50,13 +50,3 @@ $( ".toggle_radio label" ).click(function() {
 
   }
 });
-
-
-
-
-  $('#toggle_radio2').click(function (e) { //#A_ID is an example. Use the id of your Anchor
-    // console.log('I work');
-    $('html, body').animate({
-        scrollTop: $('#top').offset().top - 20 //#DIV_ID is an example. Use the id of your destination on the page
-    }, 'slow');
-});
